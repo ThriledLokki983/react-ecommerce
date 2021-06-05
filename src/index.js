@@ -8,7 +8,9 @@ import App from "./App";
 
 ReactDOM.render(
 	<React.StrictMode>
-		<App increment={1} />
+		<BrowserRouter>
+			<App />
+		</BrowserRouter>
 	</React.StrictMode>,
 	document.getElementById("root")
 );
