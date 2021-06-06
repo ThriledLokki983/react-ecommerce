@@ -1,7 +1,7 @@
 /** @format */
 
 import React from "react";
-import { withRouter } from "react-router-dom"; // higher order component
+import { withRouter } from "react-router-dom"; // higher order component - HOC
 
 import "./menu_item.styles.scss";
 
