@@ -39,7 +39,7 @@ class App extends Component {
 							...snapshot.data(),
 						},
 					});
-					console.log(this.state);
+					// console.log(this.state);
 				});
 			}
 			// if(!userAuth)
