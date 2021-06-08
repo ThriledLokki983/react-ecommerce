@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux"; // higher order Component
 import { ReactComponent as Logo } from "../../assets/crown.svg";
 
 import { auth } from "../../firebase/firebase.utils";
@@ -35,4 +36,13 @@ const Header = ({ currentUser }) => (
 	</div>
 );
 
-export default Header;
+/**
+ * Take the state and pulls off the currentUser and returns it.
+ * @param {state | Object} || This is the top level reducer
+ * @returns {Object} || The currentUser object
+ */
+const mapStateToProps = (state) => ({
+	currentUser: state.user.currentUser,
+});
+
+export default connect(mapStateToProps)(Header);
