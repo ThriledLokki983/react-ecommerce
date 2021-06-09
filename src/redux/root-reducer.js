@@ -8,6 +8,7 @@
 import { combineReducers } from "redux";
 
 import userReducer from "./user/user.reducer";
+import cartReducer from "./cart/cart.reducer";
 
 /**
  * Pulling all reducers user the combineReducer() method which will return one giant root-reducer
@@ -15,4 +16,5 @@ import userReducer from "./user/user.reducer";
  */
 export default combineReducers({
 	user: userReducer,
+	cart: cartReducer,
 });
