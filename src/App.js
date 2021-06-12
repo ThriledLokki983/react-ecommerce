@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { Component } from "react";
+import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
@@ -17,7 +17,7 @@ import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import { setCurrentUser } from "./redux/user/user.actions";
 import { selectCurrentUser } from "./redux/user/user.selector";
 
-class App extends Component {
+class App extends React.Component {
 	/**
 	 * Closing subscription when there is unmount
 	 */
@@ -36,9 +36,9 @@ class App extends Component {
 						...snapshot.data(),
 					});
 				});
-			} else {
-				setCurrentUser({ userAuth }); // userAuth is null
 			}
+
+			setCurrentUser({ userAuth }); // userAuth is null
 		});
 	}
 
