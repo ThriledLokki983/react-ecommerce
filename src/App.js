@@ -38,7 +38,6 @@ class App extends React.Component {
 			setCurrentUser(userAuth); // userAuth is null
 		});
 	}
-
 	componentWillUnmount() {
 		this.unsubscribeFromAuth();
 	}
