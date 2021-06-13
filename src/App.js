@@ -18,9 +18,6 @@ import { setCurrentUser } from "./redux/user/user.actions";
 import { selectCurrentUser } from "./redux/user/user.selector";
 
 class App extends React.Component {
-	/**
-	 * Closing subscription when there is unmount
-	 */
 	unsubscribeFromAuth = null;
 
 	componentDidMount() {
@@ -30,15 +27,15 @@ class App extends React.Component {
 			if (userAuth) {
 				const userRef = await createUserProfileDocument(userAuth);
 
-				userRef.onSnapshot((snapshot) => {
+				userRef.onSnapshot((snapShot) => {
 					setCurrentUser({
-						id: snapshot.id,
-						...snapshot.data(),
+						id: snapShot.id,
+						...snapShot.data(),
 					});
 				});
 			}
 
-			setCurrentUser({ userAuth }); // userAuth is null
+			setCurrentUser(userAuth); // userAuth is null
 		});
 	}
 
